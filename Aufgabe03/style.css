@@ -8,7 +8,7 @@ body {
 }
 
 
-.circle{
+.kreis{
     margin-top: -600px;
     margin-left: auto;
     margin-right: auto;
@@ -18,7 +18,7 @@ body {
     background-color: rgb(186, 214, 229);
 }
 
-.circle h1{
+.kreis h1{
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     padding-top: 500px;
@@ -27,7 +27,7 @@ body {
     margin-bottom: 0px;
 }
 
-.circle p{
+.kreis p{
     color: white;
     text-align: center;
     font-size: 60px;
@@ -35,14 +35,14 @@ body {
     margin-top: 0px;
 }
 
-.circle img{
+.kreis img{
     width: 30px;
     height: 30px;
     margin-left: 495px;
     margin-top: 95px;
 }
 
-.circle img:hover{
+.kreis img:hover{
     width: 40px;
     height: 40px;
     margin-left: 490px;
