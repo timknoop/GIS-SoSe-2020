@@ -1,0 +1,154 @@
+body {
+    background-image: url(bg.png);
+    font-family: sans-serif;
+}
+
+#active{
+    color: rgb(249, 227, 120);
+}
+
+
+.kreis{
+    margin-top: -600px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1050px;
+    height: 900px;
+    border-radius: 50%;
+    background-color: rgb(186, 214, 229);
+}
+
+.kreis h1{
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    padding-top: 500px;
+    text-align: center;
+    font-size: 150px;
+    margin-bottom: 0px;
+}
+
+.kreis p{
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.kreis img{
+    width: 30px;
+    height: 30px;
+    margin-left: 495px;
+    margin-top: 95px;
+}
+
+.kreis img:hover{
+    width: 40px;
+    height: 40px;
+    margin-left: 490px;
+    margin-top: 90px;
+}
+
+nav{
+    position: sticky;
+    top: 0px;
+    color: white;
+    background-color: black;
+    margin-left: 70%;
+    border-radius: 3px;
+    width: 240px;
+}
+
+nav a{
+    margin: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+}
+nav a:hover{
+    color: rgba(249, 227, 120, 0.623);
+}
+
+.content{
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    margin-top: 100px;
+}
+
+.content h2{
+    font-size: 20px;
+    color:  rgb(186, 214, 229); 
+    text-decoration: underline;
+}
+
+
+.content video{
+    width: 800px;
+    height: 400px;
+    background-color: rgba(240, 235, 235, 0);
+}
+
+.content audio{
+    width: 800px;
+}
+
+.content img{
+    width: 800px;
+    height: 400px;
+}
+
+
+.aboutMe{
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.aboutMe h2{
+    font-size: 20px;
+    color:  rgb(186, 214, 229); 
+    text-decoration: underline;
+}
+
+
+.contact{
+    width: 215px;
+    height: 270px;
+    margin-left: 150px;
+    padding: 5px;
+    border: 5px;
+}
+
+.contact h2{
+    font-size: 30px;
+    color: rgb(186, 214, 229); 
+    text-decoration: underline;
+}
+
+.contact input{
+    padding: 3px;
+    font-family: sans-serif;
+    font-size: 12px;
+    background-color: rgb(216, 216, 216);
+    width: 200px;
+    margin: 3px;
+    color: rgb(100, 100, 100);
+    border: none;
+    cursor: pointer;
+}
+
+#nachricht{
+    width: 270px;
+    height: 50px;
+    flex-wrap: wrap;
+    background-color: rgb(216, 216, 216);
+    color: white;
+    border: none;
+    margin: 3px;
+    padding: 3px;
+    font-family: sans-serif;
+    font-size: 12px;
+}
