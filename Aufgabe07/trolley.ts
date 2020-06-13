@@ -6,38 +6,39 @@ namespace Aufgabe07 {
 
             //Div erstellen
             let newDiv: HTMLDivElement = document.createElement("div");
-            document.getElementById("flexWarenkorb")?.appendChild(newDiv); 
-            newDiv.id = "divId" + index;
-            console.log("divId" + index);
+            (<HTMLElement>document.getElementById("flexWarenkorb")).appendChild(newDiv);
+            newDiv.id = "div" + index;
+            console.log("div" + index);
+            
 
             //IMG
             let imgElement: HTMLImageElement = document.createElement("img");
             imgElement.src = localStorage.getItem("artikel_bild" + index)!;
-            document.getElementById("div" + index)?.appendChild(imgElement);
+            newDiv.appendChild(imgElement);
             console.log(imgElement);
 
             //NAME
-            let name: HTMLParagraphElement = document.createElement("h1");
+            let name: HTMLParagraphElement = document.createElement("p");
             name.innerHTML = localStorage.getItem("artikel_name" + index)!;
-            document.getElementById("div" + index)?.appendChild(name);
+            newDiv.appendChild(name);
             console.log(name);
 
             //BESCHREIBUNG
             let description: HTMLParagraphElement = document.createElement("p");
             description.innerHTML = localStorage.getItem("artikel_description" + index)!;
-            document.getElementById("div" + index)?.appendChild(description);
+            newDiv.appendChild(description);
             console.log(description);
 
             //PREIS
             let price: HTMLParagraphElement = document.createElement("p");
             price.innerHTML = localStorage.getItem("artikel_preis" + index) + "€"!;
             newDiv.setAttribute("preis", price.innerHTML);
-            document.getElementById("div" + index)?.appendChild(price);
+            newDiv.appendChild(price);
             console.log(price);
 
             //BUTTON
             let kaufen: HTMLButtonElement = document.createElement("button");
             kaufen.innerHTML = "Löschen";
-            document.getElementById("div" + index)?.appendChild(kaufen);
+            newDiv.appendChild(kaufen);
     }
 }
