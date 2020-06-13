@@ -78,6 +78,17 @@ nav img:hover{
     font-size: 10px;
     cursor: pointer;
 }
+#delButton{
+    float: right;
+    margin-right: 30px;
+    margin-top: 0px;
+    cursor: pointer;
+}
+#warenkorbWert>p{
+    float: right;
+    margin-right: 30px;
+    margin-top: 0px;
+}
 #search {
     float: right;
     margin-right: 30px;

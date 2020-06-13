@@ -2,7 +2,7 @@
 { "img": "raf_simons_jacket.png", "name": "Raf Simons", "description": "Jacket", "preis": 7000, "category": 1 }, 
 { "img": "raf_simons_hoodie.png", "name": "Raf Simons", "description": "Hoodie", "preis": 2370, "category": 1 }, 
 { "img": "vivienne_westwood_jacket.png", "name": "Vivienne Westwood", "description": "Jacket", "preis": 1800, "category": 1 }, 
-{ "img": "jean_paul_gaultier_jacket.png", "name": "Jean Paul Gaultier€", "description": "Jacket", "preis": 1800, "category": 1 }, 
+{ "img": "jean_paul_gaultier_jacket.png", "name": "Jean Paul Gaultier", "description": "Jacket", "preis": 1800, "category": 1 }, 
 { "img": "chanel_basketball.png", "name": "Chanel", "description": "Basketball", "preis": 1000, "category": 1 }, 
 { "img": "dior_bag.png", "name": "Dior", "description": "Book Tote", "preis": 3000, "category": 2 }, 
 { "img": "burberry_coat.png", "name": "Burberry", "description": "Coat", "preis": 100, "category": 2 }, 
