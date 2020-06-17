@@ -15,7 +15,7 @@ namespace Aufgabe08 {
 
         console.log(reply);
 
-        for (let entry of formData) {
+        for (let entry of formData) { 
             console.log(entry);
             console.log("name: " + entry [0]);
             console.log( "value: " + entry[1]);
