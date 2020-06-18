@@ -1,7 +1,7 @@
 namespace A08Client {
     
-    let submitButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submitButton");
-    submitButton.addEventListener("click", communicate);
+    let submitBut: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submitBut");
+    submitBut.addEventListener("click", communicate);
 
     async function communicate(): Promise<void> {
 
