@@ -1,4 +1,4 @@
-namespace A08Client {
+namespace Aufgabe08 {
     
     let submitBut: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submitBut");
     submitBut.addEventListener("click", communicate);
@@ -9,11 +9,7 @@ namespace A08Client {
         let url: string = "https://timgissose2020.herokuapp.com";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
-        
-        let response: Response = await fetch(url);
-        let reply: string = await response.url;
-
-        console.log(reply);
+        await fetch(url);
 
         for (let entry of query) {
             console.log(entry);
@@ -21,5 +17,4 @@ namespace A08Client {
             console.log("value: " + entry[1]);
         }
     }
-    
 }
