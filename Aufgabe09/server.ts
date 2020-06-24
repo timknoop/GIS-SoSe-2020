@@ -34,7 +34,6 @@ export namespace A09Server {
       if (path == "/html") {
         for (let key in url.query) {
           _response.write(key + ": " + url.query[key] + "<br/>");
-          console.log(key + url.query[key]);
         }
       }
       else if (path == "/json") {
