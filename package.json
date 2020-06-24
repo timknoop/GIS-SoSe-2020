@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node": "^14.0.14"
+  },
   "scripts": {
     "start": "node Aufgabe08/server.js"
   },

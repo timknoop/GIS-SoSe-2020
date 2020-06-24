@@ -1,4 +1,4 @@
-namespace Aufgabe08 {
+namespace Aufgabe09 {
     
     let buttonActionHtml: HTMLButtonElement = <HTMLButtonElement> document.getElementById("htmlBut");
     buttonActionHtml.addEventListener("click", handleClickHtml);
@@ -8,12 +8,12 @@ namespace Aufgabe08 {
 
     async function handleClickHtml(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        let serverURL: string = "https://timgissose2020.herokuapp.com";
-        serverURL += "/html";
+        let url: string = "https://timgissose2020.herokuapp.com/";
+        url += "/html";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        serverURL += "?" + query.toString();
+        url += "?" + query.toString();
 
-        let response: Response = await fetch(serverURL);
+        let response: Response = await fetch(url);
         let responseText: string = await response.text();
         let serverResponse: HTMLElement = <HTMLElement> document.getElementById("serverResponse");
         serverResponse.innerHTML = responseText;
@@ -22,7 +22,7 @@ namespace Aufgabe08 {
     async function handleClickJson(): Promise<void> {
 
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://timgissose2020.herokuapp.com";
+        let url: string = "https://timgissose2020.herokuapp.com/";
         url += "/json";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
