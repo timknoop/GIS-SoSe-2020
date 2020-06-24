@@ -3,7 +3,7 @@ var Aufgabe08;
 (function (Aufgabe08) {
     let buttonActionHtml = document.getElementById("htmlBut");
     buttonActionHtml.addEventListener("click", handleClickHtml);
-    let submitBut = document.getElementById("jsonBut");
+    let submitBut = document.getElementById("submitBut");
     submitBut.addEventListener("click", communicate);
     async function handleClickHtml() {
         let formData = new FormData(document.forms[0]);

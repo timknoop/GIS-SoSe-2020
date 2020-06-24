@@ -3,7 +3,7 @@ namespace Aufgabe08 {
     let buttonActionHtml: HTMLButtonElement = <HTMLButtonElement> document.getElementById("htmlBut");
     buttonActionHtml.addEventListener("click", handleClickHtml);
 
-    let submitBut: HTMLButtonElement = <HTMLButtonElement>document.getElementById("jsonBut");
+    let submitBut: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submitBut");
     submitBut.addEventListener("click", communicate);
 
     async function handleClickHtml(): Promise<void> {
