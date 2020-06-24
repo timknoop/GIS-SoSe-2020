@@ -3,14 +3,13 @@ namespace Aufgabe08 {
     let buttonActionHtml: HTMLButtonElement = <HTMLButtonElement> document.getElementById("htmlBut");
     buttonActionHtml.addEventListener("click", handleClickHtml);
 
-    let submitBut: HTMLButtonElement = <HTMLButtonElement>document.getElementById("submitBut");
-    submitBut.addEventListener("click", communicate);
+    let submitBut: HTMLButtonElement = <HTMLButtonElement>document.getElementById("jsonBut");
+    submitBut.addEventListener("click", handleClickJson);
 
     async function handleClickHtml(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         let serverURL: string = "https://timgissose2020.herokuapp.com";
         serverURL += "/html";
-        // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         serverURL += "?" + query.toString();
 
@@ -20,7 +19,7 @@ namespace Aufgabe08 {
         serverResponse.innerHTML = responseText;
     }
     
-    async function communicate(): Promise<void> {
+    async function handleClickJson(): Promise<void> {
 
         let formData: FormData = new FormData(document.forms[0]);
         let url: string = "https://timgissose2020.herokuapp.com";

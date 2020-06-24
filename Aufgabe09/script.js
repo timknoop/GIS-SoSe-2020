@@ -3,13 +3,12 @@ var Aufgabe08;
 (function (Aufgabe08) {
     let buttonActionHtml = document.getElementById("htmlBut");
     buttonActionHtml.addEventListener("click", handleClickHtml);
-    let submitBut = document.getElementById("submitBut");
-    submitBut.addEventListener("click", communicate);
+    let submitBut = document.getElementById("jsonBut");
+    submitBut.addEventListener("click", handleClickJson);
     async function handleClickHtml() {
         let formData = new FormData(document.forms[0]);
         let serverURL = "https://timgissose2020.herokuapp.com";
         serverURL += "/html";
-        // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         serverURL += "?" + query.toString();
         let response = await fetch(serverURL);
@@ -17,7 +16,7 @@ var Aufgabe08;
         let serverResponse = document.getElementById("serverResponse");
         serverResponse.innerHTML = responseText;
     }
-    async function communicate() {
+    async function handleClickJson() {
         let formData = new FormData(document.forms[0]);
         let url = "https://timgissose2020.herokuapp.com";
         url += "/json";
