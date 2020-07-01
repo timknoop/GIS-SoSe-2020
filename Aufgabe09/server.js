@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.A09Server = void 0;
 const Http = require("http");
 const Url = require("url");
+//mongodb+srv://timknp:<password>@timknp.wm48n.mongodb.net/<dbname>?retryWrites=true&w=majority
 var A09Server;
 (function (A09Server) {
     console.log("Starting server");

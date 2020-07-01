@@ -1,6 +1,9 @@
 import * as Http from "http";
 import * as Url from "url";
 
+//mongodb+srv://timknp:<password>@timknp.wm48n.mongodb.net/<dbname>?retryWrites=true&w=majority
+
+
 export namespace A09Server {
  
     console.log("Starting server");
