@@ -12,8 +12,6 @@ var Aufgabe11;
         url += "/send";
         let query = new URLSearchParams(formData);
         url += "?" + query.toString();
-        let formular = document.getElementById("formular");
-        formular.reset();
         await fetch(url);
     }
     async function getButtonHandler() {
