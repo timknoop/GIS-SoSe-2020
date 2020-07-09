@@ -10,7 +10,7 @@ var A11Server;
 (function (A11Server) {
     let mongoDaten;
     let databaseUrl;
-    databaseUrl = "mongodb+srv://timknp:<password>@timknp.wm48n.mongodb.net/<dbname>?retryWrites=true&w=majority";
+    databaseUrl = "mongodb+srv://timknp:pw123456@timknp.wm48n.mongodb.net/Test?retryWrites=true&w=majority";
     connectToDatabase(databaseUrl);
     let port = Number(process.env.PORT);
     if (!port)
