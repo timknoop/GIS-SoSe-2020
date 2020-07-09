@@ -37,7 +37,7 @@ export namespace A11Server {
 
     if (_request.url) {
       let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-      if (url.pathname == "/send") {
+      if (url.pathname == "/input") {
         
         mongoDaten.insertOne(url.query);
 

@@ -29,7 +29,7 @@ var A11Server;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            if (url.pathname == "/send") {
+            if (url.pathname == "/input") {
                 mongoDaten.insertOne(url.query);
             }
             else {
