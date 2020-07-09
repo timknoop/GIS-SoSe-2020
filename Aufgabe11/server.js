@@ -24,28 +24,19 @@ var A11Server;
         await mongoClient.connect();
         mongoDaten = mongoClient.db("Test").collection("Students");
     }
-    function handleRequest(_request, _response) {
+    async function handleRequest(_request, _response) {
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            let path = url.pathname;
-            if (path == "/get") {
-                mongoDaten.find({}).toArray(function (exception, result) {
-                    if (exception)
-                        throw exception;
-                    let resultString = "";
-                    for (let i = 0; i < result.length; i++) {
-                        resultString += JSON.stringify(result[i]) + " <br>";
-                    }
-                    console.log(resultString);
-                    _response.write(JSON.stringify(resultString));
-                    _response.end();
-                });
-            }
-            else if (path == "/send")
+            if (url.pathname == "/send") {
                 mongoDaten.insertOne(url.query);
+            }
+            else {
+                _response.write(JSON.stringify(await mongoDaten.find().toArray()));
+            }
         }
+        _response.end();
     }
 })(A11Server = exports.A11Server || (exports.A11Server = {}));
 //# sourceMappingURL=server.js.map

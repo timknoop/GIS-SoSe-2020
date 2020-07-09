@@ -19,10 +19,8 @@ var Aufgabe11;
         url += "/get";
         let response = await (fetch(url));
         console.log(response);
-        let responseText = await response.json();
-        let ausgabe = document.getElementById("ausgabe");
-        ausgabe.innerHTML = responseText;
-        console.log(responseText);
+        let responseText = await response.text();
+        document.getElementById("output").innerHTML = responseText;
     }
     console.log("Fertig");
 })(Aufgabe11 || (Aufgabe11 = {}));

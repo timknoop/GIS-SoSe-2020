@@ -29,7 +29,7 @@ export namespace A11Server {
       } 
     
 
-    function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+    async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
 
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.setHeader("Access-Control-Allow-Origin", "*");
@@ -37,24 +37,15 @@ export namespace A11Server {
 
     if (_request.url) {
       let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-      let path: string | null = url.pathname;
-      if (path == "/get") {
-        mongoDaten.find({}).toArray(function(exception: Mongo.MongoError, result: string[]): void {
-          if (exception)
-            throw exception;
-          
-          let resultString: string = "";
-          for (let i: number = 0; i < result.length; i++) {
-            resultString += JSON.stringify(result[i]) + " <br>";
-          }
-          
-          console.log(resultString);
-          _response.write(JSON.stringify(resultString));
-          _response.end();
-        });
-        }
-        else if (path == "/send")
+      if (url.pathname == "/send") {
+        
         mongoDaten.insertOne(url.query);
+
+          } else {
+            _response.write(JSON.stringify(await mongoDaten.find().toArray()));
+          }
     }
+          
+    _response.end();
   } 
 }

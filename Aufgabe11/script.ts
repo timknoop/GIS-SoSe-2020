@@ -18,14 +18,10 @@ namespace Aufgabe11 {
     async function getButtonHandler(): Promise<void> {
         let url: string = "https://timgissose2020.herokuapp.com";
         url += "/get";
-
         let response: Response = await(fetch(url));
         console.log(response);
-        let responseText: string = await response.json();
-
-        let ausgabe: HTMLElement = document.getElementById("ausgabe")!;
-        ausgabe.innerHTML = responseText;
-        console.log(responseText);
+        let responseText: string = await response.text();
+        (<HTMLDivElement>document.getElementById("output")).innerHTML = responseText;
     }
     console.log("Fertig");
 }
