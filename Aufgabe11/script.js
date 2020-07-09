@@ -7,8 +7,18 @@ var Aufgabe11;
     let getButton = document.getElementById("get");
     getButton.addEventListener("click", getButtonHandler);
     async function sendButtonHandler() {
+        formData = new FormData(document.forms[0]);
         let url = "https://timgissose2020.herokuapp.com";
         url += "/send";
+        let query = new URLSearchParams(formData);
+        url += "?" + query.toString();
+        let formular = document.getElementById("formular");
+        formular.reset();
+        await fetch(url);
+    }
+    async function getButtonHandler() {
+        let url = "https://timgissose2020.herokuapp.com";
+        url += "/get";
         let response = await (fetch(url));
         console.log(response);
         let responseText = await response.json();
@@ -16,16 +26,6 @@ var Aufgabe11;
         ausgabe.innerHTML = responseText;
         console.log(responseText);
     }
-    async function getButtonHandler() {
-        formData = new FormData(document.forms[0]);
-        let url = "https://timgissose2020.herokuapp.com";
-        url += "/get";
-        let query = new URLSearchParams(formData);
-        url += "?" + query.toString();
-        let formular = document.getElementById("formular");
-        formular.reset();
-        await fetch(url);
-    }
-    console.log("Ferig");
+    console.log("Fertig");
 })(Aufgabe11 || (Aufgabe11 = {}));
 //# sourceMappingURL=script.js.map

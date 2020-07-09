@@ -38,7 +38,7 @@ export namespace A11Server {
     if (_request.url) {
       let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
       let path: string | null = url.pathname;
-      if (path == "/send") {
+      if (path == "/get") {
         mongoDaten.find({}).toArray(function(exception: Mongo.MongoError, result: string[]): void {
           if (exception)
             throw exception;
@@ -53,7 +53,7 @@ export namespace A11Server {
           _response.end();
         });
         }
-        else if (path == "/store")
+        else if (path == "/send")
         mongoDaten.insertOne(url.query);
     }
   } 
