@@ -19,7 +19,6 @@ namespace Aufgabe11 {
         let url: string = "https://timgissose2020.herokuapp.com";
         url += "/request";
         let response: Response = await(fetch(url));
-        console.log(response);
         let responseText: string = await response.text();
         (<HTMLDivElement>document.getElementById("output")).innerHTML = responseText;
     }

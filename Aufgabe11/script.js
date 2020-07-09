@@ -18,7 +18,6 @@ var Aufgabe11;
         let url = "https://timgissose2020.herokuapp.com";
         url += "/request";
         let response = await (fetch(url));
-        console.log(response);
         let responseText = await response.text();
         document.getElementById("output").innerHTML = responseText;
     }
