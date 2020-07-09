@@ -32,7 +32,7 @@ var A11Server;
             if (url.pathname == "/input") {
                 mongoDaten.insertOne(url.query);
             }
-            else {
+            else if (url.pathname == "/request") {
                 _response.write(JSON.stringify(await mongoDaten.find().toArray()));
             }
         }

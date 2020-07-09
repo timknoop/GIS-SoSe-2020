@@ -22,6 +22,5 @@ var Aufgabe11;
         let responseText = await response.text();
         document.getElementById("output").innerHTML = responseText;
     }
-    console.log("Fertig");
 })(Aufgabe11 || (Aufgabe11 = {}));
 //# sourceMappingURL=script.js.map

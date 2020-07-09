@@ -41,7 +41,7 @@ export namespace A11Server {
         
         mongoDaten.insertOne(url.query);
 
-          } else {
+          } else if (url.pathname == "/request") {
             _response.write(JSON.stringify(await mongoDaten.find().toArray()));
           }
     }

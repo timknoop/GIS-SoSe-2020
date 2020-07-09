@@ -23,5 +23,4 @@ namespace Aufgabe11 {
         let responseText: string = await response.text();
         (<HTMLDivElement>document.getElementById("output")).innerHTML = responseText;
     }
-    console.log("Fertig");
 }
