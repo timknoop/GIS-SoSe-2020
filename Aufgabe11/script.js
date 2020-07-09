@@ -3,10 +3,10 @@ var Aufgabe11;
 (function (Aufgabe11) {
     let formData;
     let sendButton = document.getElementById("input");
-    sendButton.addEventListener("click", sendButtonHandler);
+    sendButton.addEventListener("click", inputButtonHandler);
     let getButton = document.getElementById("request");
-    getButton.addEventListener("click", getButtonHandler);
-    async function sendButtonHandler() {
+    getButton.addEventListener("click", requestButtonHandler);
+    async function inputButtonHandler() {
         formData = new FormData(document.forms[0]);
         let url = "https://timgissose2020.herokuapp.com";
         url += "/input";
@@ -14,7 +14,7 @@ var Aufgabe11;
         url += "?" + query.toString();
         await fetch(url);
     }
-    async function getButtonHandler() {
+    async function requestButtonHandler() {
         let url = "https://timgissose2020.herokuapp.com";
         url += "/request";
         let response = await (fetch(url));

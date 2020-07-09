@@ -1,11 +1,11 @@
 namespace Aufgabe11 {
     let formData: FormData;
     let sendButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("input"));
-    sendButton.addEventListener("click", sendButtonHandler);
+    sendButton.addEventListener("click", inputButtonHandler);
     let getButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("request"));
-    getButton.addEventListener("click", getButtonHandler);
+    getButton.addEventListener("click", requestButtonHandler);
 
-    async function sendButtonHandler(): Promise<void> {
+    async function inputButtonHandler(): Promise<void> {
         formData = new FormData(document.forms[0]);
         let url: string = "https://timgissose2020.herokuapp.com";
         url += "/input";
@@ -15,7 +15,7 @@ namespace Aufgabe11 {
 
         await fetch(url);
     }
-    async function getButtonHandler(): Promise<void> {
+    async function requestButtonHandler(): Promise<void> {
         let url: string = "https://timgissose2020.herokuapp.com";
         url += "/request";
         let response: Response = await(fetch(url));
