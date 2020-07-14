@@ -1,4 +1,4 @@
-namespace Prüfung {
+namespace Abgabe {
 
     let length: number = parseInt(localStorage.getItem("anzahlArtikel")!);
     let preis: number = 0;

@@ -1,6 +1,6 @@
 "use strict";
-var Prüfung;
-(function (Prüfung) {
+var Abgabe;
+(function (Abgabe) {
     let length = parseInt(localStorage.getItem("anzahlArtikel"));
     let preis = 0;
     let gesamtpreis = document.createElement("p");
@@ -72,5 +72,5 @@ var Prüfung;
         let responseText = await response.text();
         document.getElementById("output").innerHTML = responseText;
     }
-})(Prüfung || (Prüfung = {}));
+})(Abgabe || (Abgabe = {}));
 //# sourceMappingURL=trolley.js.map
