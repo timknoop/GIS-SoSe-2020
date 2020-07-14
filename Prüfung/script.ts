@@ -1,4 +1,4 @@
-namespace Prüfung {
+namespace Abgabe {
 
 export function createArtikel(): void {
 for (let i: number = 0; i < artikel.length; i++) {

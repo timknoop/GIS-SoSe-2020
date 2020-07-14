@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.A11Server = void 0;
+exports.PrüfungServer = void 0;
 const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");
 //mongodb+srv://timknp:<password>@timknp.wm48n.mongodb.net/<dbname>?retryWrites=true&w=majority
 //https://mongodbnetbrowser.herokuapp.com/?u=timknp&p=pw123456&a=timknp.wm48n.mongodb.net&n=Test&c=Students
-var A11Server;
-(function (A11Server) {
+var PrüfungServer;
+(function (PrüfungServer) {
     let mongoDaten;
     let databaseUrl;
     databaseUrl = "mongodb+srv://timknp:pw123456@timknp.wm48n.mongodb.net/Test?retryWrites=true&w=majority";
@@ -38,5 +38,5 @@ var A11Server;
         }
         _response.end();
     }
-})(A11Server = exports.A11Server || (exports.A11Server = {}));
+})(PrüfungServer = exports.PrüfungServer || (exports.PrüfungServer = {}));
 //# sourceMappingURL=server.js.map

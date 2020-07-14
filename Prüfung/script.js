@@ -1,9 +1,9 @@
 "use strict";
-var Prüfung;
-(function (Prüfung) {
+var Abgabe;
+(function (Abgabe) {
     function createArtikel() {
-        for (let i = 0; i < Prüfung.artikel.length; i++) {
-            if (Prüfung.artikel[i].category == 1) {
+        for (let i = 0; i < Abgabe.artikel.length; i++) {
+            if (Abgabe.artikel[i].category == 1) {
                 let newDiv = document.createElement("div");
                 newDiv.id = "div" + i;
                 document.getElementById("flex1")?.appendChild(newDiv);
@@ -11,25 +11,25 @@ var Prüfung;
             }
             //IMG
             let imgElement = document.createElement("img");
-            imgElement.src = Prüfung.artikel[i].img;
+            imgElement.src = Abgabe.artikel[i].img;
             document.getElementById("div" + i)?.appendChild(imgElement);
             //NAME
             let name = document.createElement("p");
-            name.innerHTML = Prüfung.artikel[i].name;
+            name.innerHTML = Abgabe.artikel[i].name;
             document.getElementById("div" + i)?.appendChild(name);
             //PREIS
             let price = document.createElement("p");
-            price.innerHTML = Prüfung.artikel[i].preis + "€";
+            price.innerHTML = Abgabe.artikel[i].preis + "€";
             document.getElementById("div" + i)?.appendChild(price);
             //BUY
             let kaufen = document.createElement("button");
             kaufen.innerHTML = "Kaufen";
             kaufen.addEventListener("click", handleTrolley);
             document.getElementById("div" + i)?.appendChild(kaufen);
-            kaufen.setAttribute("preis", Prüfung.artikel[i].preis.toString());
+            kaufen.setAttribute("preis", Abgabe.artikel[i].preis.toString());
         }
     }
-    Prüfung.createArtikel = createArtikel;
+    Abgabe.createArtikel = createArtikel;
     //Einkaufswagen
     let summe = 0;
     let count = 0;
@@ -49,13 +49,13 @@ var Prüfung;
         console.log(summe.toFixed(0));
         let indexButton = _event.currentTarget.parentElement.getAttribute("index");
         let indexNr = parseInt(indexButton);
-        cartArtikel.push(Prüfung.artikel[indexNr]);
-        localStorage.setItem("artikel_bild" + (cartArtikel.length - 1), Prüfung.artikel[indexNr].img);
-        localStorage.setItem("artikel_name" + (cartArtikel.length - 1), Prüfung.artikel[indexNr].name);
-        localStorage.setItem("artikel_preis" + (cartArtikel.length - 1), Prüfung.artikel[indexNr].preis.toString());
+        cartArtikel.push(Abgabe.artikel[indexNr]);
+        localStorage.setItem("artikel_bild" + (cartArtikel.length - 1), Abgabe.artikel[indexNr].img);
+        localStorage.setItem("artikel_name" + (cartArtikel.length - 1), Abgabe.artikel[indexNr].name);
+        localStorage.setItem("artikel_preis" + (cartArtikel.length - 1), Abgabe.artikel[indexNr].preis.toString());
         localStorage.setItem("anzahlArtikel", cartArtikel.length.toString());
     }
-    Prüfung.handleTrolley = handleTrolley;
+    Abgabe.handleTrolley = handleTrolley;
     let allCategory = document.createElement("a");
     allCategory.id = "all";
     allCategory.innerHTML = "Eis";
@@ -112,5 +112,5 @@ var Prüfung;
         let responseText = await response.text();
         document.getElementById("output").innerHTML = responseText;
     }
-})(Prüfung || (Prüfung = {}));
+})(Abgabe || (Abgabe = {}));
 //# sourceMappingURL=script.js.map

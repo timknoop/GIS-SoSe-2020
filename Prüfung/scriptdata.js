@@ -1,12 +1,12 @@
 "use strict";
-var Prüfung;
-(function (Prüfung) {
+var Abgabe;
+(function (Abgabe) {
     loadArtikel("data.json");
     async function loadArtikel(_url) {
         let response = await fetch(_url);
         let jsonArray = await response.json();
-        Prüfung.artikel = await JSON.parse(JSON.stringify(jsonArray));
-        Prüfung.createArtikel();
+        Abgabe.artikel = await JSON.parse(JSON.stringify(jsonArray));
+        Abgabe.createArtikel();
     }
-})(Prüfung || (Prüfung = {}));
+})(Abgabe || (Abgabe = {}));
 //# sourceMappingURL=scriptdata.js.map

@@ -1,4 +1,4 @@
-namespace Prüfung {
+namespace Abgabe {
     export interface Artikel {
         img: string;
         name: string;
