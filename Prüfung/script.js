@@ -54,8 +54,8 @@ var Abgabe;
         localStorage.setItem("artikel_name" + (cartArtikel.length - 1), Abgabe.artikel[indexNr].name);
         localStorage.setItem("artikel_preis" + (cartArtikel.length - 1), Abgabe.artikel[indexNr].preis.toString());
         localStorage.setItem("anzahlArtikel", cartArtikel.length.toString());
-        document.getElementById("flexCart").innerHTML = "";
         createStore();
+        document.getElementById("flexCart").innerHTML = "";
     }
     Abgabe.handleTrolley = handleTrolley;
     let allCategory = document.createElement("a");
@@ -63,8 +63,6 @@ var Abgabe;
     allCategory.innerHTML = "Eis";
     document.getElementById("eisButton")?.appendChild(allCategory);
     let length = parseInt(localStorage.getItem("anzahlArtikel"));
-    let preis = 0;
-    let gesamtpreis = document.createElement("p");
     function createStore() {
         for (let index = 0; index <= length - 1; index++) {
             //Div erstellen
@@ -77,23 +75,11 @@ var Abgabe;
             imgElement.src = localStorage.getItem("artikel_bild" + index);
             newDiv.appendChild(imgElement);
             console.log(imgElement);
-            let price = document.createElement("p");
-            price.innerHTML = localStorage.getItem("artikel_preis" + index) + "€";
-            newDiv.setAttribute("preis", price.innerHTML);
-            newDiv.appendChild(price);
-            console.log(price);
             //BUTTON
             let kaufen = document.createElement("button");
             kaufen.innerHTML = "Löschen";
             newDiv.appendChild(kaufen);
-            kaufen.addEventListener("click", handleDelete);
         }
-    }
-    function handleDelete(_event) {
-        let preisString = _event.currentTarget.parentElement.getAttribute("preis");
-        preis = preis - parseFloat(preisString);
-        gesamtpreis.innerHTML = "Gesamtpreis: " + preis.toFixed(0) + "€";
-        (_event.currentTarget.parentElement).remove();
     }
 })(Abgabe || (Abgabe = {}));
 //# sourceMappingURL=script.js.map

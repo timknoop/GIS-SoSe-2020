@@ -65,8 +65,8 @@ export function handleTrolley(_event: Event): void {
     localStorage.setItem("artikel_name" + (cartArtikel.length - 1), artikel[indexNr].name);
     localStorage.setItem("artikel_preis" + (cartArtikel.length - 1), artikel[indexNr].preis.toString());
     localStorage.setItem("anzahlArtikel", cartArtikel.length.toString());
-    (<HTMLElement>document.getElementById("flexCart")).innerHTML = "";
     createStore();
+    (<HTMLElement>document.getElementById("flexCart")).innerHTML = "";
 }
 
 let allCategory: HTMLAnchorElement = document.createElement("a");
@@ -75,45 +75,26 @@ allCategory.innerHTML = "Eis";
 document.getElementById("eisButton")?.appendChild(allCategory);
 
 let length: number = parseInt(localStorage.getItem("anzahlArtikel")!);
-let preis: number = 0;
-let gesamtpreis: HTMLParagraphElement = document.createElement("p");
 
 function createStore(): void {
-for (let index: number = 0; index <= length - 1; index++) {
+    for (let index: number = 0; index <= length - 1; index++) {
 
-            //Div erstellen
-            let newDiv: HTMLDivElement = document.createElement("div");
-            (<HTMLElement>document.getElementById("flexCart")).appendChild(newDiv);
-            newDiv.id = "div" + index;
-            console.log("div" + index);
+                //Div erstellen
+                let newDiv: HTMLDivElement = document.createElement("div");
+                (<HTMLElement>document.getElementById("flexCart")).appendChild(newDiv);
+                newDiv.id = "div" + index;
+                console.log("div" + index);
 
-            //IMG
-            let imgElement: HTMLImageElement = document.createElement("img");
-            imgElement.src = localStorage.getItem("artikel_bild" + index)!;
-            newDiv.appendChild(imgElement);
-            console.log(imgElement);
-
-            let price: HTMLParagraphElement = document.createElement("p");
-            price.innerHTML = localStorage.getItem("artikel_preis" + index) + "€"!;
-            newDiv.setAttribute("preis", price.innerHTML);
-            newDiv.appendChild(price);
-            console.log(price);
-            
-            //BUTTON
-            let kaufen: HTMLButtonElement = document.createElement("button");
-            kaufen.innerHTML = "Löschen";
-            newDiv.appendChild(kaufen);
-            kaufen.addEventListener("click", handleDelete);
-    }
+                //IMG
+                let imgElement: HTMLImageElement = document.createElement("img");
+                imgElement.src = localStorage.getItem("artikel_bild" + index)!;
+                newDiv.appendChild(imgElement);
+                console.log(imgElement);
+                //BUTTON
+                let kaufen: HTMLButtonElement = document.createElement("button");
+                kaufen.innerHTML = "Löschen";
+                newDiv.appendChild(kaufen);
+        }
 }
 
-function handleDelete(_event: Event): void {
-    let preisString: string = (<HTMLParagraphElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("preis")!;
-    preis = preis - parseFloat(preisString);
-    gesamtpreis.innerHTML = "Gesamtpreis: " + preis.toFixed(0) + "€";
-    ((<HTMLDivElement>_event.currentTarget).parentElement!).remove();
-    }
-
-
 }
-

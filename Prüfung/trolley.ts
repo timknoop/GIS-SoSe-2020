@@ -1,4 +1,4 @@
-namespace Abgabe {
+/*namespace Abgabe {
 
     let length: number = parseInt(localStorage.getItem("anzahlArtikel")!);
     let preis: number = 0;
@@ -85,4 +85,4 @@ namespace Abgabe {
         let responseText: string = await response.text();
         (<HTMLDivElement>document.getElementById("output")).innerHTML = responseText;
     }
-}
+}*/
