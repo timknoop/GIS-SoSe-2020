@@ -65,8 +65,8 @@ export function handleTrolley(_event: Event): void {
     localStorage.setItem("artikel_name" + (cartArtikel.length - 1), artikel[indexNr].name);
     localStorage.setItem("artikel_preis" + (cartArtikel.length - 1), artikel[indexNr].preis.toString());
     localStorage.setItem("anzahlArtikel", cartArtikel.length.toString());
-    createStore();
     (<HTMLElement>document.getElementById("flexCart")).innerHTML = "";
+    createStore();
 }
 
 let allCategory: HTMLAnchorElement = document.createElement("a");

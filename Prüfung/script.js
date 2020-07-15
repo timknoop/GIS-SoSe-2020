@@ -54,8 +54,8 @@ var Abgabe;
         localStorage.setItem("artikel_name" + (cartArtikel.length - 1), Abgabe.artikel[indexNr].name);
         localStorage.setItem("artikel_preis" + (cartArtikel.length - 1), Abgabe.artikel[indexNr].preis.toString());
         localStorage.setItem("anzahlArtikel", cartArtikel.length.toString());
-        createStore();
         document.getElementById("flexCart").innerHTML = "";
+        createStore();
     }
     Abgabe.handleTrolley = handleTrolley;
     let allCategory = document.createElement("a");
