@@ -54,6 +54,8 @@ var Abgabe;
         localStorage.setItem("artikel_name" + (cartArtikel.length - 1), Abgabe.artikel[indexNr].name);
         localStorage.setItem("artikel_preis" + (cartArtikel.length - 1), Abgabe.artikel[indexNr].preis.toString());
         localStorage.setItem("anzahlArtikel", cartArtikel.length.toString());
+        document.getElementById("flexCart").innerHTML = "";
+        createStore();
     }
     Abgabe.handleTrolley = handleTrolley;
     let allCategory = document.createElement("a");
@@ -63,27 +65,29 @@ var Abgabe;
     let length = parseInt(localStorage.getItem("anzahlArtikel"));
     let preis = 0;
     let gesamtpreis = document.createElement("p");
-    for (let index = 0; index <= length - 1; index++) {
-        //Div erstellen
-        let newDiv = document.createElement("div");
-        document.getElementById("flexWarenkorb").appendChild(newDiv);
-        newDiv.id = "div" + index;
-        console.log("div" + index);
-        //IMG
-        let imgElement = document.createElement("img");
-        imgElement.src = localStorage.getItem("artikel_bild" + index);
-        newDiv.appendChild(imgElement);
-        console.log(imgElement);
-        let price = document.createElement("p");
-        price.innerHTML = localStorage.getItem("artikel_preis" + index) + "€";
-        newDiv.setAttribute("preis", price.innerHTML);
-        newDiv.appendChild(price);
-        console.log(price);
-        //BUTTON
-        let kaufen = document.createElement("button");
-        kaufen.innerHTML = "Löschen";
-        newDiv.appendChild(kaufen);
-        kaufen.addEventListener("click", handleDelete);
+    function createStore() {
+        for (let index = 0; index <= length - 1; index++) {
+            //Div erstellen
+            let newDiv = document.createElement("div");
+            document.getElementById("flexCart").appendChild(newDiv);
+            newDiv.id = "div" + index;
+            console.log("div" + index);
+            //IMG
+            let imgElement = document.createElement("img");
+            imgElement.src = localStorage.getItem("artikel_bild" + index);
+            newDiv.appendChild(imgElement);
+            console.log(imgElement);
+            let price = document.createElement("p");
+            price.innerHTML = localStorage.getItem("artikel_preis" + index) + "€";
+            newDiv.setAttribute("preis", price.innerHTML);
+            newDiv.appendChild(price);
+            console.log(price);
+            //BUTTON
+            let kaufen = document.createElement("button");
+            kaufen.innerHTML = "Löschen";
+            newDiv.appendChild(kaufen);
+            kaufen.addEventListener("click", handleDelete);
+        }
     }
     function handleDelete(_event) {
         let preisString = _event.currentTarget.parentElement.getAttribute("preis");

@@ -46,7 +46,7 @@ nav a{
     color: #000000;
 }
 nav a:hover{
-    color: #6471FF;
+    color: #5F5F5F;
 }
 nav img:hover{
     opacity: 70%;
@@ -209,6 +209,23 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
   }
+.orderButton{
+  background-color: #5F5F5F;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  font-family: monospace;
+}
+.orderButton:hover {
+    background-color: #5f5f5f83;
+}
 
 }
 
