@@ -1,4 +1,4 @@
-/*namespace Abgabe {
+namespace Abgabe {
 
     let length: number = parseInt(localStorage.getItem("anzahlArtikel")!);
     let preis: number = 0;
@@ -23,7 +23,6 @@
             let name: HTMLParagraphElement = document.createElement("p");
             name.innerHTML = localStorage.getItem("artikel_name" + index)!;
             newDiv.appendChild(name);
-            console.log(name);
 
             //PREIS
             let price: HTMLParagraphElement = document.createElement("p");
@@ -45,7 +44,6 @@
     }
     let delButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("delButton"));
     delButton.addEventListener("click", handleDeleteAll);
-
 
     function handleDelete(_event: Event): void {
     let preisString: string = (<HTMLParagraphElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("preis")!;
@@ -85,4 +83,4 @@
         let responseText: string = await response.text();
         (<HTMLDivElement>document.getElementById("output")).innerHTML = responseText;
     }
-}*/
+}

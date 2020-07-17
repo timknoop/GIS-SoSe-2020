@@ -62,8 +62,8 @@ var Abgabe;
     allCategory.id = "all";
     allCategory.innerHTML = "Eis";
     document.getElementById("eisButton")?.appendChild(allCategory);
-    let length = parseInt(localStorage.getItem("anzahlArtikel"));
     function createStore() {
+        let length = parseInt(localStorage.getItem("anzahlArtikel"));
         for (let index = 0; index <= length - 1; index++) {
             //Div erstellen
             let newDiv = document.createElement("div");
@@ -75,10 +75,6 @@ var Abgabe;
             imgElement.src = localStorage.getItem("artikel_bild" + index);
             newDiv.appendChild(imgElement);
             console.log(imgElement);
-            //BUTTON
-            let kaufen = document.createElement("button");
-            kaufen.innerHTML = "Löschen";
-            newDiv.appendChild(kaufen);
         }
     }
 })(Abgabe || (Abgabe = {}));

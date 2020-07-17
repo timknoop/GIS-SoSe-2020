@@ -74,9 +74,8 @@ allCategory.id = "all";
 allCategory.innerHTML = "Eis";
 document.getElementById("eisButton")?.appendChild(allCategory);
 
-let length: number = parseInt(localStorage.getItem("anzahlArtikel")!);
-
 function createStore(): void {
+    let length: number = parseInt(localStorage.getItem("anzahlArtikel")!);
     for (let index: number = 0; index <= length - 1; index++) {
 
                 //Div erstellen
@@ -90,10 +89,6 @@ function createStore(): void {
                 imgElement.src = localStorage.getItem("artikel_bild" + index)!;
                 newDiv.appendChild(imgElement);
                 console.log(imgElement);
-                //BUTTON
-                let kaufen: HTMLButtonElement = document.createElement("button");
-                kaufen.innerHTML = "Löschen";
-                newDiv.appendChild(kaufen);
         }
 }
 
