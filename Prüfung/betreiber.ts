@@ -1,18 +1,12 @@
 namespace Abgabe {
-    let formData: FormData;
-    let sendButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("input"));
-    sendButton.addEventListener("click", inputButtonHandler);
+    let delButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("deleteButton"));
+    delButton.addEventListener("click", deleteButtonHandler);
     let getButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("request"));
     getButton.addEventListener("click", requestButtonHandler);
 
-    async function inputButtonHandler(): Promise<void> {
-        formData = new FormData(document.forms[0]);
+    async function deleteButtonHandler(): Promise<void> {
         let url: string = "https://timgissose2020.herokuapp.com";
-        url += "/input";
-        
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
-        url += "?" + query.toString();
-
+        url += "/deleteAll";
         await fetch(url);
     }
     async function requestButtonHandler(): Promise<void> {

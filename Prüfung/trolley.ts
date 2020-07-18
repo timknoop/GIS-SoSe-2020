@@ -10,32 +10,28 @@ namespace Abgabe {
             let newDiv: HTMLDivElement = document.createElement("div");
             (<HTMLElement>document.getElementById("flexWarenkorb")).appendChild(newDiv);
             newDiv.id = "div" + index;
-            console.log("div" + index);
             
 
             //IMG
             let imgElement: HTMLImageElement = document.createElement("img");
             imgElement.src = localStorage.getItem("artikel_bild" + index)!;
             newDiv.appendChild(imgElement);
-            console.log(imgElement);
+
+            let rname: HTMLParagraphElement = document.createElement("p");
+            rname.innerHTML = localStorage.getItem("artikel_name" + index)!;
+            newDiv.appendChild(rname);
 
             //NAME
             let name: HTMLParagraphElement = document.createElement("p");
             name.innerHTML = localStorage.getItem("artikel_name" + index)!;
             newDiv.appendChild(name);
+            (<HTMLElement>document.getElementById("givename")).appendChild(name);
 
             //PREIS
             let price: HTMLParagraphElement = document.createElement("p");
             price.innerHTML = localStorage.getItem("artikel_preis" + index) + "€"!;
             newDiv.setAttribute("preis", price.innerHTML);
             newDiv.appendChild(price);
-            console.log(price);
-
-            //BUTTON
-            let kaufen: HTMLButtonElement = document.createElement("button");
-            kaufen.innerHTML = "Löschen";
-            newDiv.appendChild(kaufen);
-            kaufen.addEventListener("click", handleDelete);
 
             //Gesamtpreis berechnen
             preis = preis + parseFloat(price.innerHTML);
@@ -45,13 +41,6 @@ namespace Abgabe {
     let delButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("delButton"));
     delButton.addEventListener("click", handleDeleteAll);
 
-    function handleDelete(_event: Event): void {
-    let preisString: string = (<HTMLParagraphElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("preis")!;
-    preis = preis - parseFloat(preisString);
-    gesamtpreis.innerHTML = "Gesamtpreis: " + preis.toFixed(0) + "€";
-    ((<HTMLDivElement>_event.currentTarget).parentElement!).remove();
-    }
-
     function handleDeleteAll(_event: Event): void {
         for (let index: number = 0; index <= length; index++) {
             (<HTMLDivElement>document.getElementById("div" + index)).remove();
@@ -59,15 +48,23 @@ namespace Abgabe {
             localStorage.clear();
         }
     }
+
     //FORM
+    //Bestellung mitsenden
+    // tslint:disable-next-line: typedef
+    let element = document.getElementById("givename")!;
+    // tslint:disable-next-line: typedef
+    let html = element.innerText;
+    // tslint:disable-next-line: typedef
+    let json = JSON.stringify({order: html});
+    console.log(json);
+
     let formData: FormData;
     let sendButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("input"));
     sendButton.addEventListener("click", inputButtonHandler);
-    let getButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("request"));
-    getButton.addEventListener("click", requestButtonHandler);
-
     async function inputButtonHandler(): Promise<void> {
         formData = new FormData(document.forms[0]);
+        formData.append("Bestellung", json);
         let url: string = "https://timgissose2020.herokuapp.com";
         url += "/input";
         
@@ -75,12 +72,5 @@ namespace Abgabe {
         url += "?" + query.toString();
 
         await fetch(url);
-    }
-    async function requestButtonHandler(): Promise<void> {
-        let url: string = "https://timgissose2020.herokuapp.com";
-        url += "/request";
-        let response: Response = await(fetch(url));
-        let responseText: string = await response.text();
-        (<HTMLDivElement>document.getElementById("output")).innerHTML = responseText;
     }
 }

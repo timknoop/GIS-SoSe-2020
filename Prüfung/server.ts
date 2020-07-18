@@ -41,8 +41,14 @@ export namespace PrüfungServer {
         
         mongoDaten.insertOne(url.query);
 
-          } else if (url.pathname == "/request") {
+          } 
+          
+          else if (url.pathname == "/request") {
             _response.write(JSON.stringify(await mongoDaten.find().toArray()));
+          }
+
+          else if (url.pathname == "/deleteAll") {
+            mongoDaten.deleteMany({});
           }
     }
           

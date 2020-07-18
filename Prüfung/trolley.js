@@ -9,27 +9,23 @@ var Abgabe;
         let newDiv = document.createElement("div");
         document.getElementById("flexWarenkorb").appendChild(newDiv);
         newDiv.id = "div" + index;
-        console.log("div" + index);
         //IMG
         let imgElement = document.createElement("img");
         imgElement.src = localStorage.getItem("artikel_bild" + index);
         newDiv.appendChild(imgElement);
-        console.log(imgElement);
+        let rname = document.createElement("p");
+        rname.innerHTML = localStorage.getItem("artikel_name" + index);
+        newDiv.appendChild(rname);
         //NAME
         let name = document.createElement("p");
         name.innerHTML = localStorage.getItem("artikel_name" + index);
         newDiv.appendChild(name);
+        document.getElementById("givename").appendChild(name);
         //PREIS
         let price = document.createElement("p");
         price.innerHTML = localStorage.getItem("artikel_preis" + index) + "€";
         newDiv.setAttribute("preis", price.innerHTML);
         newDiv.appendChild(price);
-        console.log(price);
-        //BUTTON
-        let kaufen = document.createElement("button");
-        kaufen.innerHTML = "Löschen";
-        newDiv.appendChild(kaufen);
-        kaufen.addEventListener("click", handleDelete);
         //Gesamtpreis berechnen
         preis = preis + parseFloat(price.innerHTML);
         gesamtpreis.innerHTML = "Gesamtpreis: " + preis.toFixed(0) + "€";
@@ -37,12 +33,6 @@ var Abgabe;
     }
     let delButton = document.getElementById("delButton");
     delButton.addEventListener("click", handleDeleteAll);
-    function handleDelete(_event) {
-        let preisString = _event.currentTarget.parentElement.getAttribute("preis");
-        preis = preis - parseFloat(preisString);
-        gesamtpreis.innerHTML = "Gesamtpreis: " + preis.toFixed(0) + "€";
-        (_event.currentTarget.parentElement).remove();
-    }
     function handleDeleteAll(_event) {
         for (let index = 0; index <= length; index++) {
             document.getElementById("div" + index).remove();
@@ -51,25 +41,25 @@ var Abgabe;
         }
     }
     //FORM
+    //Bestellung mitsenden
+    // tslint:disable-next-line: typedef
+    let element = document.getElementById("givename");
+    // tslint:disable-next-line: typedef
+    let html = element.innerText;
+    // tslint:disable-next-line: typedef
+    let json = JSON.stringify({ order: html });
+    console.log(json);
     let formData;
     let sendButton = document.getElementById("input");
     sendButton.addEventListener("click", inputButtonHandler);
-    let getButton = document.getElementById("request");
-    getButton.addEventListener("click", requestButtonHandler);
     async function inputButtonHandler() {
         formData = new FormData(document.forms[0]);
+        formData.append("Bestellung", json);
         let url = "https://timgissose2020.herokuapp.com";
         url += "/input";
         let query = new URLSearchParams(formData);
         url += "?" + query.toString();
         await fetch(url);
-    }
-    async function requestButtonHandler() {
-        let url = "https://timgissose2020.herokuapp.com";
-        url += "/request";
-        let response = await (fetch(url));
-        let responseText = await response.text();
-        document.getElementById("output").innerHTML = responseText;
     }
 })(Abgabe || (Abgabe = {}));
 //# sourceMappingURL=trolley.js.map

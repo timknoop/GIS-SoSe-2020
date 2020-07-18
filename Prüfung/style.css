@@ -90,6 +90,12 @@ Button {
     margin-top: 0px;
     cursor: pointer;
 }
+#deleteButton{
+    float: right;
+    margin-right: 30px;
+    margin-top: 0px;
+    cursor: pointer;
+}
 #warenkorbWert>p{
     float: right;
     margin-right: 30px;
@@ -239,6 +245,9 @@ input[type=text], select {
 }
 .orderButton:hover {
     background-color: #5f5f5f83;
+}
+#givename {
+    display: none;
 }
 
 }

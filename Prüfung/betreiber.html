@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+</div><!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <script src="scriptdata.js"></script>
-    <title>Shop</title>
+    <script src="betreiber.js" defer></script>
+    <title>Ordermanager</title>
 </head>
 <body>
     <div class="box-area">
@@ -16,22 +15,21 @@
                         <a href="#"><img src="logo.png" alt="shop_logo"></a>
                     </div>
                     <nav>
-                            <a id="eisButton" href=shop.html></a>
+                            <a href="shop.html">Shop</a>
                             <div id="warencounter"></div>
                         <a href="trolley.html"><img src="eiswaffel.png" alt="eiswaffel"></a>
+                        <a id="warenkorbWert"></a>
                     </nav>
                 </div>
             </header>
-        <main>
-            <div class="content-area" id=#kategorie1>
-                <div id= "kategorie1">
-                    <h2>Bestellungen</h2>
-                    <button type="button" id="request">request</button><br>
-                    <div id="output"> Output</div>
-                    </div>
-                    
-            </div>
-        </main>
-    </div>
+            <main>
+                <div class="content-area">
+                    <h2>Bestellungen:</h2>
+                            <button type="button" id="request">Bestellungen ansehen</button>
+                            <button type="button" id="deleteButton">Bestellungen löschen</button>
+                    <div id="output"></div>
+                </div>
+            </main>
+        </div>
     </body>
 </html>

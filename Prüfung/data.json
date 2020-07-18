@@ -1,6 +1,6 @@
-[{ "img": "Brombeere.png", "name": "Brombeere", "preis": 1, "category": 1 }, 
-{ "img": "Erdbeere.png", "name": "Erdbeere", "preis": 1, "category": 1 }, 
-{ "img": "Himbeere.png", "name": "Himbeere", "preis": 1, "category": 1 }, 
-{ "img": "Mango.png", "name": "Mango", "preis": 1, "category": 1 }, 
-{ "img": "Schokolade.png", "name": "Schokolade", "preis": 1, "category": 1 }, 
-{ "img": "Stracciatella.png", "name": "Stracciatella", "preis": 1, "category": 1 }]
+[{ "img": "Brombeere.png", "name": "Brombeere ", "preis": 1, "category": 1 }, 
+{ "img": "Erdbeere.png", "name": "Erdbeere ", "preis": 1, "category": 1 }, 
+{ "img": "Himbeere.png", "name": "Himbeere ", "preis": 1, "category": 1 }, 
+{ "img": "Mango.png", "name": "Mango ", "preis": 1, "category": 1 }, 
+{ "img": "Schokolade.png", "name": "Schokolade ", "preis": 1, "category": 1 }, 
+{ "img": "Stracciatella.png", "name": "Stracciatella ", "preis": 1, "category": 1 }]
