@@ -47,7 +47,7 @@ var Abgabe;
     // tslint:disable-next-line: typedef
     let html = element.innerText;
     // tslint:disable-next-line: typedef
-    let json = JSON.stringify({ order: html });
+    let json = JSON.stringify({ ordered: html });
     console.log(json);
     let formData;
     let sendButton = document.getElementById("input");
@@ -59,6 +59,7 @@ var Abgabe;
         url += "/input";
         let query = new URLSearchParams(formData);
         url += "?" + query.toString();
+        document.getElementById("myform")?.reset();
         await fetch(url);
     }
 })(Abgabe || (Abgabe = {}));

@@ -38,6 +38,9 @@ var PrüfungServer;
             else if (url.pathname == "/deleteAll") {
                 mongoDaten.deleteMany({});
             }
+            else if (url.pathname == "/update") {
+                mongoDaten.deleteMany({});
+            }
         }
         _response.end();
     }

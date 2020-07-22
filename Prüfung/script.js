@@ -68,14 +68,19 @@ var Abgabe;
             //Div erstellen
             let newDiv = document.createElement("div");
             document.getElementById("flexCart").appendChild(newDiv);
-            newDiv.id = "div" + index;
-            console.log("div" + index);
+            newDiv.id = "anidiv" + index;
             //IMG
             let imgElement = document.createElement("img");
             imgElement.src = localStorage.getItem("artikel_bild" + index);
             newDiv.appendChild(imgElement);
             console.log(imgElement);
         }
+    }
+    let delButton = document.getElementById("deleteButton");
+    delButton.addEventListener("click", handleReset);
+    function handleReset(_event) {
+        localStorage.clear();
+        location.reload();
     }
 })(Abgabe || (Abgabe = {}));
 //# sourceMappingURL=script.js.map

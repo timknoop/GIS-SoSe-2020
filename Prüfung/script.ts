@@ -69,6 +69,7 @@ export function handleTrolley(_event: Event): void {
     createStore();
 }
 
+
 let allCategory: HTMLAnchorElement = document.createElement("a");
 allCategory.id = "all";
 allCategory.innerHTML = "Eis";
@@ -81,8 +82,7 @@ function createStore(): void {
                 //Div erstellen
                 let newDiv: HTMLDivElement = document.createElement("div");
                 (<HTMLElement>document.getElementById("flexCart")).appendChild(newDiv);
-                newDiv.id = "div" + index;
-                console.log("div" + index);
+                newDiv.id = "anidiv" + index;
 
                 //IMG
                 let imgElement: HTMLImageElement = document.createElement("img");
@@ -91,5 +91,12 @@ function createStore(): void {
                 console.log(imgElement);
         }
 }
+let delButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("deleteButton"));
+delButton.addEventListener("click", handleReset);
+
+function handleReset(_event: Event): void {
+            localStorage.clear();
+            location.reload();
+    }
 
 }

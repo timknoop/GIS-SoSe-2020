@@ -56,7 +56,7 @@ namespace Abgabe {
     // tslint:disable-next-line: typedef
     let html = element.innerText;
     // tslint:disable-next-line: typedef
-    let json = JSON.stringify({order: html});
+    let json = JSON.stringify({ordered: html});
     console.log(json);
 
     let formData: FormData;
@@ -71,6 +71,7 @@ namespace Abgabe {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "?" + query.toString();
 
+        (<HTMLFormElement>document.getElementById("myform"))?.reset();
         await fetch(url);
     }
 }
