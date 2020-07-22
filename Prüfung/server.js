@@ -39,7 +39,7 @@ var PrüfungServer;
                 mongoDaten.deleteMany({});
             }
             else if (url.pathname == "/update") {
-                mongoDaten.deleteMany({});
+                mongoDaten.updateMany({ Name: "Tim" }, { $set: { Name: "Thorsten" } });
             }
         }
         _response.end();
