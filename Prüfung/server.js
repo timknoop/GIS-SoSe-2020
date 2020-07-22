@@ -39,7 +39,7 @@ var PrüfungServer;
                 mongoDaten.deleteMany({});
             }
             else if (url.pathname == "/update") {
-                mongoDaten.updateMany({ Status: "" }, { $set: { Status: "versandt" } });
+                mongoDaten.updateMany({ Status: "ausstehend" }, { $set: { Status: "versandt" } });
             }
         }
         _response.end();
