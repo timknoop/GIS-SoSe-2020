@@ -55,14 +55,15 @@ Button {
     background-color: #5F5F5F;
   border: none;
   color: white;
-  padding: 8px;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 0px 2px;
+  margin-left: 10px;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 10px;
   font-family: monospace;
 }
 #allButton {
@@ -248,6 +249,15 @@ input[type=text], select {
 }
 #givename {
     display: none;
+}
+#output {
+    margin-bottom: 10px;
+    text-align: left;
+    float: left;
+    width: 100%;
+    padding: 10px;
+    padding-top: 20px;
+    font-family: monospace;
 }
 
 }
