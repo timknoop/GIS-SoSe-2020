@@ -259,6 +259,9 @@ input[type=text], select {
     padding-top: 20px;
     font-family: monospace;
 }
+#status {
+    display: none;
+}
 
 }
 
