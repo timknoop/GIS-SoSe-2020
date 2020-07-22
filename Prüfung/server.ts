@@ -51,7 +51,7 @@ export namespace PrüfungServer {
             mongoDaten.deleteMany({});
           }
           else if (url.pathname == "/update") {
-            mongoDaten.updateMany({Name: ""}, {$set: {Status: "versandt"}});
+            mongoDaten.updateMany({Status: ""}, {$set: {Status: "versandt"}});
           }
     }
           
