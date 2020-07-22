@@ -3,13 +3,14 @@ namespace Abgabe {
     delButton.addEventListener("click", deleteButtonHandler);
     let getButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("request"));
     getButton.addEventListener("click", requestButtonHandler);
-    let statsButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("update"));
-    statsButton.addEventListener("click", statsButtonHandler);
+    let shipButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("ship"));
+    shipButton.addEventListener("click", shipButtonHandler);
 
     async function deleteButtonHandler(): Promise<void> {
         let url: string = "https://timgissose2020.herokuapp.com";
         url += "/deleteAll";
         await fetch(url);
+        location.reload();
     }
 
     async function requestButtonHandler(): Promise<void> {
@@ -20,9 +21,10 @@ namespace Abgabe {
         (<HTMLDivElement>document.getElementById("output")).innerHTML = responseText;
     }
 
-    async function statsButtonHandler(): Promise<void> {
+    async function shipButtonHandler(): Promise<void> {
         let url: string = "https://timgissose2020.herokuapp.com";
         url += "/update";
         await fetch(url);
+        location.reload();
     }
 }

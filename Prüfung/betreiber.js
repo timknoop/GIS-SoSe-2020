@@ -5,12 +5,13 @@ var Abgabe;
     delButton.addEventListener("click", deleteButtonHandler);
     let getButton = document.getElementById("request");
     getButton.addEventListener("click", requestButtonHandler);
-    let statsButton = document.getElementById("update");
-    statsButton.addEventListener("click", statsButtonHandler);
+    let shipButton = document.getElementById("ship");
+    shipButton.addEventListener("click", shipButtonHandler);
     async function deleteButtonHandler() {
         let url = "https://timgissose2020.herokuapp.com";
         url += "/deleteAll";
         await fetch(url);
+        location.reload();
     }
     async function requestButtonHandler() {
         let url = "https://timgissose2020.herokuapp.com";
@@ -19,10 +20,11 @@ var Abgabe;
         let responseText = await response.text();
         document.getElementById("output").innerHTML = responseText;
     }
-    async function statsButtonHandler() {
+    async function shipButtonHandler() {
         let url = "https://timgissose2020.herokuapp.com";
         url += "/update";
         await fetch(url);
+        location.reload();
     }
 })(Abgabe || (Abgabe = {}));
 //# sourceMappingURL=betreiber.js.map
