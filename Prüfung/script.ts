@@ -91,7 +91,7 @@ function createStore(): void {
                 console.log(imgElement);
         }
 }
-let delButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("deleteButton"));
+let delButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("delButton"));
 delButton.addEventListener("click", handleReset);
 
 function handleReset(_event: Event): void {

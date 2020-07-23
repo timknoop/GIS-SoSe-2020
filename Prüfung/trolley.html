@@ -12,12 +12,12 @@
             <header>
                 <div class="wrapper">
                     <div class="top">
-                        <a href="#"><img src="logo.png" alt="shop_logo"></a>
+                        <a href="#"><img src="images/logo.png" alt="shop_logo"></a>
                     </div>
                     <nav>
-                            <a href="shop.html">Zurück zum Shop</a>
-                            <div id="warencounter"></div>
-                        <a href="trolley.html"><img src="eiswaffel.png" alt="eiswaffel"></a>
+                        <a href="shop.html">Zurück zum Shop</a>
+                        <div id="warencounter"></div>
+                        <a href="trolley.html"><img src="images/eiswaffel.png" alt="eiswaffel"></a>
                         <a id="warenkorbWert"></a>
                         <a id="delButton">Bestellung löschen</a>
                     </nav>
@@ -26,8 +26,7 @@
             <main>
                 <div class="content-area">
                     <h2>Warenkorb:</h2>
-                    <div class="form">
-                        <form id="myform">
+                        <form id="form">
                             <label>Name</label><br>
                             <input type="text" name="Name" placeholder="Name"> <br>
                             <label>Adresse</label><br>
@@ -35,10 +34,8 @@
                             <input id="status" type="text" name="Status" value="ausstehend"><br>
                             <button class="orderButton" type="button" id="input">Bestellung aufgeben</button>
                         </form>
-                    </div>
                     <div id="flexWarenkorb" class="products"></div>
                     <div id="givename"></div>
-                    <div id="output"></div>
                 </div>
             </main>
         </div>

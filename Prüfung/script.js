@@ -76,7 +76,7 @@ var Abgabe;
             console.log(imgElement);
         }
     }
-    let delButton = document.getElementById("deleteButton");
+    let delButton = document.getElementById("delButton");
     delButton.addEventListener("click", handleReset);
     function handleReset(_event) {
         localStorage.clear();
