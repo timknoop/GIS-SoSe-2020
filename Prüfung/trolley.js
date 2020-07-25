@@ -59,7 +59,7 @@ var Abgabe;
         url += "/input";
         let query = new URLSearchParams(formData);
         url += "?" + query.toString();
-        document.getElementById("myform")?.reset();
+        document.getElementById("form")?.reset();
         await fetch(url);
     }
 })(Abgabe || (Abgabe = {}));

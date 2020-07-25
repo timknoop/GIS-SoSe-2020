@@ -71,7 +71,7 @@ namespace Abgabe {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "?" + query.toString();
 
-        (<HTMLFormElement>document.getElementById("myform"))?.reset();
+        (<HTMLFormElement>document.getElementById("form"))?.reset();
         await fetch(url);
     }
 }
