@@ -75,7 +75,7 @@ Button {
     height: 100%;
     position: relative;
     top: 80px;
-    background: #f7f4e4;
+    background: #ffffff;
 }
 .content-area h2{
     font-family: monospace;
@@ -113,7 +113,7 @@ Button {
     }
 header{
     height: 100px;
-    background: #f7f4e4;
+    background: #ffffff;
     width: 100%;
     z-index: 12;
     position: fixed;

@@ -38,7 +38,7 @@ namespace Abgabe {
             gesamtpreis.innerHTML = "Gesamtpreis: " + preis.toFixed(0) + "€";
             document.getElementById("warenkorbWert")?.appendChild(gesamtpreis);
     }
-    let delButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("delButton"));
+    let delButton: HTMLButtonElement = (<HTMLButtonElement>document.getElementById("deleteButton"));
     delButton.addEventListener("click", handleDeleteAll);
 
     function handleDeleteAll(_event: Event): void {

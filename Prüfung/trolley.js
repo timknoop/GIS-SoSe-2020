@@ -31,7 +31,7 @@ var Abgabe;
         gesamtpreis.innerHTML = "Gesamtpreis: " + preis.toFixed(0) + "€";
         document.getElementById("warenkorbWert")?.appendChild(gesamtpreis);
     }
-    let delButton = document.getElementById("delButton");
+    let delButton = document.getElementById("deleteButton");
     delButton.addEventListener("click", handleDeleteAll);
     function handleDeleteAll(_event) {
         for (let index = 0; index <= length; index++) {

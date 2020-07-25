@@ -58,10 +58,6 @@ var Abgabe;
         createStore();
     }
     Abgabe.handleTrolley = handleTrolley;
-    let allCategory = document.createElement("a");
-    allCategory.id = "all";
-    allCategory.innerHTML = "Eis";
-    document.getElementById("eisButton")?.appendChild(allCategory);
     function createStore() {
         let length = parseInt(localStorage.getItem("anzahlArtikel"));
         for (let index = 0; index <= length - 1; index++) {

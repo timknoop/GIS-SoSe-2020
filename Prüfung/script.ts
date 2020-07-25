@@ -69,12 +69,6 @@ export function handleTrolley(_event: Event): void {
     createStore();
 }
 
-
-let allCategory: HTMLAnchorElement = document.createElement("a");
-allCategory.id = "all";
-allCategory.innerHTML = "Eis";
-document.getElementById("eisButton")?.appendChild(allCategory);
-
 function createStore(): void {
     let length: number = parseInt(localStorage.getItem("anzahlArtikel")!);
     for (let index: number = 0; index <= length - 1; index++) {
