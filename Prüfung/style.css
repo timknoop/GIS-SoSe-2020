@@ -251,7 +251,7 @@ Button {
 }
 #form{
     border-radius: 5px;
-    padding: 20px;
+    padding: 10px;
 }
     input[type=text], select {
         width: 50%;
@@ -308,7 +308,7 @@ margin-top: -80px;
 }
     header{
         height: 100px;
-        background: #ffffff;
+        background: #f7f4e4;
         width: 100%;
         z-index: 12;
         position: fixed;
@@ -419,6 +419,22 @@ margin-top: -80px;
 
 @media screen and (max-width: 812px){
 /*iPhone Version*/
+        Button {
+        background-color: #5F5F5F;
+        border: none;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 8px;
+        margin-left: 5px;
+        margin-top: 5px;
+        cursor: pointer;
+        border-radius: 10px;
+        font-family: monospace;
+        font-size: small;
+        }
         header{
             height: 80px;
             background: #ffffff;
@@ -459,10 +475,10 @@ margin-top: -80px;
         nav a:hover{
             color: #6471FF;
         }
-        nav img:hover{
-            width: 30px;
-            height: 30px;
-            margin-top: 35px;
+        #delButton{
+            float: left;
+            margin-left: 60%;
+            margin-top: -80px;
         }
         img[alt="eiswaffel"]{
             float: right;
@@ -470,6 +486,25 @@ margin-top: -80px;
             margin-right: 10px;
             width: 20px;
             height: 20px;
+        }
+        .cart{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .cart div{
+            position: relative;
+            float: left;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: center;
+            float: left;
+            width: 10%;
+            padding-top: 20px;
+        }
+        
+        .cart div img{
+            height: 50x;
+            width: 50px;
         }
         .content-area{
             width: 100%;
@@ -489,6 +524,11 @@ margin-top: -80px;
             padding: 2% 0;
             font-family: merienda;
             line-height: 30px;
+        }
+        #deleteButton{
+            float: right;
+            margin-right:10px;
+            margin-top: -20px;
         }
         .products{
             display: flex;
@@ -528,4 +568,15 @@ margin-top: -80px;
             font-family: merienda;
             margin-top: 10px;
         }
+        #warencounter{
+            float:right;
+            margin-top: -100px;
+            font-size: 15px;
+            color: #000000;
+            height: 20px;
+        }
+        #warenkorbWert>p{
+            margin-left: 53%;
+            margin-top: -80px;
+            }    
         }
